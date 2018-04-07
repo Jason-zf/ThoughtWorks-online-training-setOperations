@@ -21,11 +21,8 @@ public class Add {
     public int getSumOfOdds(int leftBorder, int rightBorder) {
         int max = rightBorder > leftBorder ? rightBorder : leftBorder;
         int min = leftBorder < rightBorder ? leftBorder : rightBorder;
-        int sum = (min % 2) == 1 ? min : min + 1;
-        for (int i = sum + 2; i < max; i += 2) {
-            sum += i;
-        }
-        return sum;
+        IntStream intStream = IntStream.range(min, max + 1);
+        return intStream.map(i -> i % 2 == 1 ? i : 0).reduce(0, Integer::sum);
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
