@@ -2,6 +2,8 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Add {
@@ -19,14 +21,14 @@ public class Add {
         int max = rightBorder > leftBorder ? rightBorder : leftBorder;
         int min = leftBorder < rightBorder ? leftBorder : rightBorder;
         int sum = (min % 2) == 1 ? min : min + 1;
-        for (int i=sum+2;i<max;i+=2) {
-            sum+=i;
+        for (int i = sum + 2; i < max; i += 2) {
+            sum += i;
         }
         return sum;
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return arrayList.stream().map(i -> 3 * i + 2).mapToInt(Integer::intValue).sum();
     }
 
     public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
