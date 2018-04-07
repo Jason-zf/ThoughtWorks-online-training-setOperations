@@ -6,17 +6,23 @@ import java.util.List;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
-        int max=rightBorder>leftBorder?rightBorder:leftBorder;
-        int min=leftBorder<rightBorder?leftBorder:rightBorder;
+        int max = rightBorder > leftBorder ? rightBorder : leftBorder;
+        int min = leftBorder < rightBorder ? leftBorder : rightBorder;
         int sum = (min % 2) == 0 ? min : min + 1;
-        for (int i = sum+2; i <= max; i += 2) {
+        for (int i = sum + 2; i <= max; i += 2) {
             sum += i;
         }
         return sum;
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+        int max = rightBorder > leftBorder ? rightBorder : leftBorder;
+        int min = leftBorder < rightBorder ? leftBorder : rightBorder;
+        int sum = (min % 2) == 1 ? min : min + 1;
+        for (int i=sum+2;i<max;i+=2) {
+            sum+=i;
+        }
+        return sum;
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
