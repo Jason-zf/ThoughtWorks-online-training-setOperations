@@ -4,6 +4,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -58,6 +59,11 @@ public class Add {
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
-        return arrayList.stream().map(integer -> integer * 3).collect(Collectors.toList());
+        List<Integer> list = arrayList.stream().map(integer -> integer * 3).collect(Collectors.toList());
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < list.size() - 1; ++i) {
+            result.add(list.get(i) + list.get(i + 1));
+        }
+        return result;
     }
 }
