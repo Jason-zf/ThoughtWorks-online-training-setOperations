@@ -39,7 +39,7 @@ public class Add {
     }
 
     public int getSumOfProcessedOdds(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return arrayList.stream().map(integer -> integer%2==1?3*integer+5:0).mapToInt(Integer::intValue).sum();
     }
 
     public double getMedianOfEvenIndex(List<Integer> arrayList) {
