@@ -42,11 +42,11 @@ public class Add {
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {
-        return (double)arrayList.stream().filter(integer -> integer%2==0).reduce(0,Integer::sum)/arrayList.stream().filter(integer -> integer%2==0).collect(Collectors.toList()).size();
+        return (double) arrayList.stream().filter(integer -> integer % 2 == 0).reduce(0, Integer::sum) / arrayList.stream().filter(integer -> integer % 2 == 0).collect(Collectors.toList()).size();
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
-        throw new NotImplementedException();
+        return arrayList.stream().filter(integer -> integer % 2 == 0).collect(Collectors.toList()).contains(specialElment);
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
