@@ -42,7 +42,7 @@ public class Add {
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {
-        return (double) arrayList.stream().filter(integer -> integer % 2 == 0).reduce(0, Integer::sum) / arrayList.stream().filter(integer -> integer % 2 == 0).collect(Collectors.toList()).size();
+        return (double) arrayList.stream().filter(integer -> integer % 2 == 0).mapToInt(value -> value).average().getAsDouble();
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
@@ -50,13 +50,13 @@ public class Add {
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
-        return arrayList.stream().filter(integer -> integer%2==0).distinct().collect(Collectors.toList());
+        return arrayList.stream().filter(integer -> integer % 2 == 0).distinct().collect(Collectors.toList());
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
         Collections.sort(arrayList);
-        List<Integer>evens=arrayList.stream().filter(integer -> integer%2==0).collect(Collectors.toList());
-        List<Integer>odds=arrayList.stream().filter(integer -> integer%2==1).collect(Collectors.toList());
+        List<Integer> evens = arrayList.stream().filter(integer -> integer % 2 == 0).collect(Collectors.toList());
+        List<Integer> odds = arrayList.stream().filter(integer -> integer % 2 == 1).collect(Collectors.toList());
         Collections.reverse(odds);
         evens.addAll(odds);
         return evens;
