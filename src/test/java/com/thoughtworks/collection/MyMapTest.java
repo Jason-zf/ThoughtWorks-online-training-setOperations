@@ -33,7 +33,6 @@ public class MyMapTest {
 
         String[] result = new String[]{"a", "b", "c", "d", "e"};
         List<String> resultList = Arrays.asList(result);
-
         assertThat(myMap.mapLetter()).isEqualTo(resultList);
     }
 
