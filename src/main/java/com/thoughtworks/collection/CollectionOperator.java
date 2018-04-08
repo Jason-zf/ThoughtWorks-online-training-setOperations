@@ -14,14 +14,14 @@ public class CollectionOperator {
             IntStream intStream = IntStream.range(left, right + 1);
             return intStream.boxed().collect(Collectors.toList());
         }
-        IntStream intStream = IntStream.range(right, left+1);
+        IntStream intStream = IntStream.range(right, left + 1);
         List<Integer> res = intStream.boxed().collect(Collectors.toList());
         Collections.reverse(res);
         return res;
     }
 
     public List<Integer> getEvenListByIntervals(int left, int right) {
-        throw new NotImplementedException();
+        return getListByInterval(left, right).stream().filter(integer -> integer % 2 == 0).collect(Collectors.toList());
     }
 
     public List<Integer> popEvenElments(int[] array) {
