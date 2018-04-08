@@ -19,11 +19,11 @@ public class MyMap {
     }
 
     public List<Integer> getTriple() {
-        return this.array.stream().map(integer -> integer*3).collect(Collectors.toList());
+        return this.array.stream().map(integer -> integer * 3).collect(Collectors.toList());
     }
 
     public List<String> mapLetter() {
-        return this.array.stream().map(integer -> (new Character((char)(integer-1+97))).toString()).collect(Collectors.toList());
+        return this.array.stream().map(integer -> (new Character((char) (integer - 1 + 97))).toString()).collect(Collectors.toList());
     }
 
     public List<String> mapLetters() {
@@ -31,11 +31,12 @@ public class MyMap {
     }
 
     public List<Integer> sortFromBig() {
-        Collections.sort(this.array,Collections.reverseOrder());
+        Collections.sort(this.array, Collections.reverseOrder());
         return this.array;
     }
 
     public List<Integer> sortFromSmall() {
-        throw new NotImplementedException();
+        Collections.sort(this.array);
+        return this.array;
     }
 }
