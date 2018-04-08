@@ -41,7 +41,7 @@ public class Reduce {
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return this.arrayList.equals(arrayList);
     }
 
     //实现接口SingleLink，然后再此函数内使用
