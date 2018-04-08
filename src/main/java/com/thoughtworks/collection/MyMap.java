@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+import com.sun.org.apache.regexp.internal.RE;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Arrays;
@@ -23,11 +24,11 @@ public class MyMap {
     }
 
     public List<String> mapLetter() {
-        return this.array.stream().map(integer -> (new Character((char) (integer - 1 + 97))).toString()).collect(Collectors.toList());
+        return this.array.stream().map(integer -> Character.toString((char) (integer - 1 + 97))).collect(Collectors.toList());
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        return this.array.stream().map(integer -> (integer-1)/26==0?Character.toString((char)(integer+96)):((integer-1)/26==1?"a":"b")+Character.toString((char)((integer-1)%26+97))).collect(Collectors.toList());
     }
 
     public List<Integer> sortFromBig() {
