@@ -3,9 +3,12 @@ package com.thoughtworks.collection;
 import com.sun.org.apache.regexp.internal.RE;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.awt.font.TextHitInfo;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.mockito.Mockito.mock;
 
 public class Reduce {
 
@@ -46,7 +49,12 @@ public class Reduce {
 
     //实现接口SingleLink，然后再此函数内使用
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        SingleLink singleLink1=new SingleLinkImplement<Integer>();
+        for (int i = 0; i < this.arrayList.size(); ++i) {
+            singleLink1.addTailPointer(this.arrayList.get(i));
+            singleLink.addTailPointer(this.arrayList.get(i));
+        }
+        return singleLink1.size() % 2 == 0 ? ((Integer) singleLink1.getNode(singleLink1.size() / 2) + (Integer) singleLink1.getNode(singleLink1.size() / 2 + 1)) / 2.0 : (Integer) singleLink1.getNode(singleLink1.size() / 2);
     }
 
     public int getLastOdd() {
@@ -57,3 +65,4 @@ public class Reduce {
         return this.arrayList.indexOf(getLastOdd());
     }
 }
+
