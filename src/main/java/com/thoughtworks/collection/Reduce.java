@@ -18,7 +18,7 @@ public class Reduce {
     }
 
     public double getMinimum() {
-        throw new NotImplementedException();
+        return Collections.min(this.arrayList);
     }
 
     public double getAverage() {
