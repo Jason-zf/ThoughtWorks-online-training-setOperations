@@ -2,10 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -39,7 +36,9 @@ public class Add {
     }
 
     public double getMedianOfEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> list = arrayList.stream().filter(integer -> integer % 2 == 0).collect(Collectors.toList());
+        Collections.sort(list);
+        return list.size() % 2 == 0 ? (list.get(list.size() / 2 - 1) + list.get(list.size() / 2)) / 2.0 : list.get(list.size() / 2);
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {
