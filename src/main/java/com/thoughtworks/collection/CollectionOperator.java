@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+import com.sun.deploy.util.ArrayUtil;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.*;
@@ -36,6 +37,8 @@ public class CollectionOperator {
     }
 
     public List<Integer> addUncommonElement(Integer[] firstArray, Integer[] secondArray) {
-        throw new NotImplementedException();
+        List<Integer> res=Arrays.stream(firstArray).collect(Collectors.toList());
+        res.addAll(Arrays.asList(secondArray));
+        return res.stream().distinct().collect(Collectors.toList());
     }
 }
