@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 public class Flaten {
 
     Integer[][] array;
+
     public Flaten(Integer[][] array) {
         this.array = array;
     }
@@ -18,6 +19,6 @@ public class Flaten {
     }
 
     public List<Integer> transformToUnrepeatedOneDimesional() {
-        throw new NotImplementedException();
+        return transformToOneDimesional().stream().distinct().collect(Collectors.toList());
     }
 }
