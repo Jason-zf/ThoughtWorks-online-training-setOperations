@@ -20,7 +20,7 @@ public class InverseReduceTest {
 
         Integer[] result = new Integer[]{7, 5, 3, 1};
         List<Integer> resultList = Arrays.asList(result);
-
+        List<Integer> res = inverseReduce.divideToSmaller(9);
         assertThat(inverseReduce.divideToSmaller(9)).isEqualTo(resultList);
     }
 }
