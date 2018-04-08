@@ -54,7 +54,12 @@ public class Add {
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        Collections.sort(arrayList);
+        List<Integer>evens=arrayList.stream().filter(integer -> integer%2==0).collect(Collectors.toList());
+        List<Integer>odds=arrayList.stream().filter(integer -> integer%2==1).collect(Collectors.toList());
+        Collections.reverse(odds);
+        evens.addAll(odds);
+        return evens;
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
