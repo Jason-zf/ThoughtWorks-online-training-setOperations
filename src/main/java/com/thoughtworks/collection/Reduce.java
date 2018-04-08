@@ -33,7 +33,7 @@ public class Reduce {
     }
 
     public int getFirstEven() {
-        return this.arrayList.stream().filter(integer -> integer%2==0).findFirst().get();
+        return this.arrayList.stream().filter(integer -> integer % 2 == 0).findFirst().get();
     }
 
     public int getIndexOfFirstEven() {
@@ -50,10 +50,10 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        return this.arrayList.stream().filter(integer -> integer%2==1).reduce((first,second)->second).get();
+        return this.arrayList.stream().filter(integer -> integer % 2 == 1).reduce((first, second) -> second).get();
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        return this.arrayList.indexOf(getLastOdd());
     }
 }
