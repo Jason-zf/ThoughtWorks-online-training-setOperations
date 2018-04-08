@@ -50,8 +50,7 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
-//        return this.arrayList.stream().filter(integer -> integer%2==1).collect(Collectors.toList()).
+        return this.arrayList.stream().filter(integer -> integer%2==1).reduce((first,second)->second).get();
     }
 
     public int getIndexOfLastOdd() {
