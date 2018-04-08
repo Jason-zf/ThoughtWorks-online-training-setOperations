@@ -42,7 +42,8 @@ public class Add {
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer>list =arrayList.stream().filter(integer -> integer%2==0).collect(Collectors.toList());
+        return (double)list.stream().reduce(0,Integer::sum)/list.size();
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
