@@ -1,8 +1,5 @@
 package com.thoughtworks.collection;
 
-import com.sun.org.apache.regexp.internal.RE;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;

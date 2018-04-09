@@ -1,7 +1,5 @@
 package com.thoughtworks.collection;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class SingleLinkImplement<T> implements SingleLink<T> {
@@ -40,10 +38,11 @@ public class SingleLinkImplement<T> implements SingleLink<T> {
             throw new IndexOutOfBoundsException("单链表索引越界");
         }
         Node curr = head;
-        for (int i = 0; i < size && curr.next != null; ++i, curr = curr.next) {
+        for (int i = 0; i < size && curr != null; ++i) {
             if (i == index - 1) {
                 return curr;
             }
+            curr=curr.next;
         }
         return null;
     }
@@ -74,6 +73,7 @@ public class SingleLinkImplement<T> implements SingleLink<T> {
             return false;
         }
         head = head.next;
+        size--;
         return true;
     }
 
@@ -84,6 +84,7 @@ public class SingleLinkImplement<T> implements SingleLink<T> {
         Node prev = getNodebyIndex(size - 1);
         Node deleteNode = prev.next;
         prev.next = deleteNode.next;
+        size--;
         return true;
     }
 

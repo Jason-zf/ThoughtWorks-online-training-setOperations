@@ -1,9 +1,8 @@
 package com.thoughtworks.collection;
 
-import com.sun.deploy.util.ArrayUtil;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
