@@ -34,13 +34,11 @@ public class Add {
     }
 
     public double getMedianOfEvenIndex(List<Integer> arrayList) {
-        List<Integer> list = arrayList.stream().filter(integer -> integer % 2 == 0).collect(Collectors.toList());
-        Collections.sort(list);
-        return list.size() % 2 == 0 ? (list.get(list.size() / 2 - 1) + list.get(list.size() / 2)) / 2.0 : list.get(list.size() / 2);
+        return getMedimum(arrayList.stream().filter(integer -> integer % 2 == 0).collect(Collectors.toList()));
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {
-        return (double) arrayList.stream().filter(integer -> integer % 2 == 0).mapToInt(value -> value).average().getAsDouble();
+        return arrayList.stream().filter(integer -> integer % 2 == 0).mapToInt(value -> value).average().getAsDouble();
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
@@ -67,5 +65,10 @@ public class Add {
             result.add(list.get(i) + list.get(i + 1));
         }
         return result;
+    }
+
+    public static Double getMedimum(List<Integer> list) {
+        Collections.sort(list);
+        return list.size() % 2 == 0 ? (list.get(list.size() / 2 - 1) + list.get(list.size() / 2)) / 2.0 : Double.valueOf(list.get(list.size() / 2));
     }
 }

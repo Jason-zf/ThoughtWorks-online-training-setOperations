@@ -19,6 +19,6 @@ public class InverseReduce {
     public List<Integer> divideToSmaller(int number) {
         List<Integer>res =  IntStream.range(0, number).boxed().collect(Collectors.toList());
         Collections.reverse(res);
-        return res.stream().filter(integer -> (number-integer)%2==0).collect(Collectors.toList());
+        return res.stream().filter(integer -> (number-integer)%random.nextInt(3)==0).collect(Collectors.toList());
     }
 }

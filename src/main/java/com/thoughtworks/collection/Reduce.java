@@ -24,8 +24,7 @@ public class Reduce {
     }
 
     public double getOrderedMedian() {
-        Collections.sort(this.arrayList);
-        return this.arrayList.size() % 2 == 0 ? (this.arrayList.get(this.arrayList.size() / 2 - 1) + this.arrayList.get(this.arrayList.size() / 2)) / 2.0 : this.arrayList.get(this.arrayList.size() / 2);
+        return Add.getMedimum(this.arrayList);
     }
 
     public int getFirstEven() {
